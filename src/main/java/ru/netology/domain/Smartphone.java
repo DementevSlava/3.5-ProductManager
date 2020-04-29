@@ -35,4 +35,9 @@ public class Smartphone extends Product{
     public int hashCode() {
         return Objects.hash(super.hashCode(), manufacturer);
     }
+
+    @Override
+    public boolean matches(String search) {
+        return super.matches(search) || this.getManufacturer().matches(search);
+    }
 }
