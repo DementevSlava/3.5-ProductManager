@@ -1,13 +1,18 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
+import ru.netology.manager.ProductManager;
 import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductManagerTest {
-    private ProductManager manager = new ProductManager();
+    private ProductRepository repository = new ProductRepository();
+    private ProductManager manager = new ProductManager(repository);
     Product product1 = new Book(1, "Гарри Поттер и философский камень", 249, "Дж. К. Роулинг");
     Product product99 = new Book(1, "Гарри Поттер и тайная комната", 249, "Дж. К. Роулинг");
     Product product2 = new Book(2, "Унесенные ветром", 119, "Маргарет Митчелл");
