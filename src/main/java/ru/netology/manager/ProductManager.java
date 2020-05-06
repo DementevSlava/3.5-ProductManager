@@ -1,9 +1,14 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
+import ru.netology.domain.Product;
 import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
-    private ProductRepository repository = new ProductRepository();
+    private ProductRepository repository;
+
+    public ProductManager(ProductRepository repository) {
+        this.repository = repository;
+    }
 
     public void addProduct(Product product) {
         repository.save(product);
